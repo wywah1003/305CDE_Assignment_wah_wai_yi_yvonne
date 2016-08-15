@@ -1,0 +1,61 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery Mobile Web App</title>
+<link href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<script>
+
+
+$(document).ready(function() {
+	
+$("#submit").on('click',function() {
+    var topic=$("#topic").val();
+	var author=$("#author").val();
+    var message=$("#message").val();
+    	
+	if(!topic==""){
+	}else{
+		alert("No Topic!");
+	    return;	
+	}
+	
+	
+    var myData = { "topic" : topic ,  "message" : message, "author": author,};
+	 		
+        $.ajax({
+  		  	 url:'message_add_api.php',
+  			   type:"POST",
+           dataType : 'json',
+  			   data:myData,
+        success: function(msg, status){
+    				
+        
+                },
+                 error:function(xhr, ajaxOptions, thrownError){
+                   // alert(xhr.status);
+                    alert(thrownError);
+                 }
+            });
+   
+});	
+
+
+});
+</script>
+</head> 
+<body> 
+
+Topic: <input type="text" id="topic" ><br>
+Author: <input type="text" id="author" ><br>
+Message: <input type="text" id="message" ><br>
+
+
+<button id="submit">Save</button>
+<br><br><br><br>
+
+</body>
+</html>

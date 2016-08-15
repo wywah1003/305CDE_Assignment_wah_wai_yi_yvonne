@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+ <script type="text/javascript">
+$(document).ready(function() {
+$.ajax({
+type:"GET",
+url:"message_fetch_object.php",
+dataType:"json",
+success:function(data){
+
+$.each(data,function(i,n){ 
+
+
+$('#result').append('<li ><a href="" data-transition="slideup" onclick="Get('+n.topic_id+')">'+n.topic+'<P>'+n.message+'</P></a></li>');
+});
+$.mobile.changePage('#resultspage1');
+$('#result').listview('refresh');
+}
+});
+
+});
+
+</script>
+</head>
+<body>
+
+<div data-role="page" id="pageone">
+  <div data-role="panel" id="myPanel"> 
+    <ul data-role="listview" data-inset="false" data-theme="b">
+		<li><div style="text-align: center;"><img src="assets/img/logo.png" alt="Logo"></div></li>
+		<li><a data-transition="slide" href="What_is_Plagiarism.html"><img src="assets/img/menu-icons/home.png" alt="Home" class="ui-li-icon">Home</a></li>
+		<li id="menu_recipes" class="countable"><a data-transition="slide" data-count="0" href="recipes.html"><img src="assets/img/menu-icons/star.png" alt="Recipes" class="ui-li-icon">Sign up / Sing in</a></li>
+		<li id="menu_blog" class="countable-"><a data-transition="slide" data-count="0" href="blog.html"><img src="assets/img/menu-icons/blog.png" alt="Blog" class="ui-li-icon">Forum</a></li>
+		<li id="menu_video" class="countable-"><a data-transition="slide" data-count="0" href="video.html"><img src="assets/img/menu-icons/video.png" alt="Video" class="ui-li-icon">Video</a></li>
+		<li><a data-transition="slide" href="information.html"><img src="assets/img/menu-icons/information.png" alt="Information" class="ui-li-icon">Bookmark</a></li>
+		<li><a data-transition="slide" href="form-elements.html"><img src="assets/img/menu-icons/typography.png" alt="Form Elements" class="ui-li-icon">Tools</a></li>
+		<li><a data-transition="slide" href="form-elements.html"><img src="assets/img/menu-icons/typography.png" alt="Form Elements" class="ui-li-icon">Contact us</a></li>
+	</ul>
+  </div> 
+
+ <div data-role="header" >
+  <a href="#myPanel"  data-theme="b" class="ui-btn-left">Menu</a>
+  <a href="#" data-icon="back" data-rel="back" title="Go back" data-theme="b" class="ui-btn-right">Back</a>
+       <h1>Messages</h1>
+  </div>
+
+  <div data-role="content"  >    
+
+	<article data-role="content">
+    <h2>Messages:</h2>
+    <br>
+    </article>
+         
+		
+<div data-role="content">	
+		<ul data-role="listview" id="result">
+		</ul>		
+	</div>
+	<div data-role="footer">
+		<h4></h4>
+	</div>
+</div>
+ 
+ <div data-role="content">	
+		<ul data-role="listview" id="result2">
+		</ul>		
+	</div>
+	<div data-role="footer">
+		<h4></h4>
+	</div>
+</div>
+
+ </body>
+</html>
+
+

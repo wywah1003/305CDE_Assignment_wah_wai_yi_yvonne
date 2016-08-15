@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Drug Findrt</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+    <meta http-equiv="cleartype" content="on">
+    <!-- jQuery Mobile CSS bits -->
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <!-- Custom css -->
+    <link rel="stylesheet" href="css/custom.css" />
+    <!-- Javascript includes -->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/mobileinit.js"></script>
+    <script src="js/ios-orientationchange-fix.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/jquery.tmpl.js"></script>
+    <script src="js/application.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header" data-position="fixed">
+            <a href="#menu" data-theme="d" class="ui-btn-left">Menu</a>
+            <h1>Topics</h1>
+            <a href="#" data-theme="d" data-icon="arrow-l" data-iconpos="left" data-rel="back" data-transition="slide" data-direction="reverse">Back</a>
+        </div>
+        <div>
+          <img src="img/forum.png" width=100% height="183"></div>
+        <div data-role="content">
+            <div style="color:white;float:right;">
+                <a href="#add_topic" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn"> Add </a>
+            </div>
+            <h2 class="list-header">Topics </h2>
+            <ul class="topic_list" data-role="listview" data-split-icon="delete">
+            </ul>
+        </div>
+        <div data-role="popup" id="delete_topic" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+            <h1>Delete topic?</h1>
+            <h3 class="ui-title">Are you sure you want to delete this topic?</h3>
+            <a onclick="javascript:deleteTopic(this);" href="javascript:void(0);" data-rel="back" class="delete_topic ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left ui-btn-inline ui-mini">Delete</a>
+            <a href="javascript:void(0);" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancel</a>
+        </div>
+        <div data-role="popup" id="add_topic" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+            <h1>Add Topic</h1>
+            <label for="topictext">Topic:</label>
+            <textarea cols="40" rows="8" name="topictext" id="topictext"></textarea>
+            <p class="topic_text_error hidden red_color">Topic text cannot be empty</p>
+            <label for="topicdetails">Topic details:</label>
+            <textarea cols="40" rows="8" name="topicdetails" id="topicdetails"></textarea>
+            <p class="topic_details_error hidden red_color">Topic details cannot be empty</p>
+            <a href="javascript:void(0);" onclick="return saveTopic(this);" class="save_topic ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left ui-btn-inline ui-mini">Save</a>
+            <a id="close_save_popup" href="javascript:void(0);" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancel</a>
+        </div>
+        <div data-role="panel" id="menu">
+            <ul data-role="listview" data-inset="false" data-theme="b">
+                 <li>
+                    <a href="index"><i class="ui-icon-home ui-btn-icon-left"></i>Home</a>
+                </li>
+               
+               <div data-role="collapsible">
+                        <h2>Information</h2>
+                        <ul data-role="listview" data-filter-theme="c" data-divider-theme="d" data-inset="false">
+                            <li>
+                    <a href="Understanding_drug_abuse"><i class="ui-icon-comment ui-btn-icon-left"></i><font size="2">Understanding drug abuse</font></a>
+                </li>
+                <li>
+                    <a href="How_drug_abuse_develop"><i class="ui-icon-comment ui-btn-icon-left"></i><font size="2">How drug abuse develop</font></a>
+                </li>
+                <li>
+                 <a href="Signs_and_symptoms"><i class="ui-icon-comment ui-btn-icon-left"></i><font size="2">Signs and symptoms</font></a>
+                </li>
+                <li>
+                 <a href="Getting_help"><i class="ui-icon-comment ui-btn-icon-left"></i><font size="2">Getting help</font></a>
+                </li>
+                <li>
+                 <a href="Warning_signs"><i class="ui-icon-comment ui-btn-icon-left"></i><font size="2">Warning signs</font></a>
+                </li>
+                <li>
+                 <a href="Have_a_drug_problem"><i class="ui-icon-comment ui-btn-icon-left"></i><font size="2">Have a drug problem</font></a>
+                </li>
+                        </ul>
+                    </div>
+               
+               <div data-role="collapsible">
+                        <h2>Tools</h2>
+                        <ul data-role="listview" data-filter-theme="c" data-divider-theme="d" data-inset="false">
+                            <li>
+                    <a href="search"><i class="ui-icon-search ui-btn-icon-left"></i><font size="2">Search</font></a>
+                </li>
+                <li>
+                    <a href="favourites"><i class="ui-icon-star ui-btn-icon-left"></i><font size="2">Favourites</font></a>
+                </li>
+                        </ul>
+                    </div>
+               
+               <div data-role="collapsible">
+                        <h2>Entertainment</h2>
+                        <ul data-role="listview" data-filter-theme="c" data-divider-theme="d" data-inset="false">
+                       <li>
+                    <a href="topics"><i class="ui-icon-comment ui-btn-icon-left"></i><font size="2">Forums</font></a>
+                </li>    
+                       <li>
+                    <a href="video"><i class="ui-icon-video ui-btn-icon-left"></i><font size="2">Video</font></a>
+                </li>
+                  <li>
+                    <a href="game"><i class="ui-icon-star ui-btn-icon-left"></i><font size="2">Game</font></a>
+                </li>     
+                           
+                        </ul>
+                    </div>
+                 <li>
+                    <a href="contact"><i class="ui-icon-phone ui-btn-icon-left"></i>Contact Us</a>
+                </li>
+                
+                <li id="login">
+                    <a href="login"><i class="ui-icon-lock ui-btn-icon-left"></i>Login</a>
+                </li>
+                <li id="logout" class="hidden">
+                    <a href="javascript:void(0)" onclick="logout();"><i class="ui-icon-arrow-d ui-btn-icon-left"></i>Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script id='topic-list-template' type='text/x-jquery-tmpl'>
+        {{if results != null}} 
+            {{each results}} 
+                {{if current_user_id == $value.created_by}}
+                    <li id="topic_id_${$value.id}"><a data-ajax='false' href="comments.html?topicid=${$value.id}"><h2>${$value.topic} </h2><p><strong class="topic_text">${$value.details}</strong></p></a><a onclick="javascript:deleteConfirm(this);" href="javascript:void(0);" id="${$value.id}">Delete topic</a></li>
+                {{else}}
+                    <li id="topic_id_${$value.id}"><a data-ajax='false' class="" href="comments.html?topicid=${$value.id}"><h2>${$value.topic} </h2><p><strong class="topic_text">${$value.details}</strong></p></a><a class="ui-state-disabled" href="javascript:void(0);" id="${$value.id}">Delete topic</a></li>
+                {{/if}} 
+            {{/each}} 
+      {{else}}
+        <p id="no_data">No Data Found</p>
+      {{/if}}
+    </script>
+    <script src="js/topics.js"></script>
+</body>
+
+</html>

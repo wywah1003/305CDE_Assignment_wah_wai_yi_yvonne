@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<head><meta charset="UTF-8">
+	<title>Settings Output</title>
+	<!-- Run in full-screen mode. -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<!-- Make the status bar black with white text. -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<!-- Customize home screen title. -->
+	<meta name="apple-mobile-web-app-title" content="Lemonado Web App">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	 <!-- Icons -->
+
+	<!-- iOS 7 iPad (retina) -->
+	<link href="assets/img/apple/apple-touch-icon-152x152.png"
+		  sizes="152x152"
+		  rel="apple-touch-icon">
+
+	<!-- iOS 6 iPad (retina) -->
+	<link href="assets/img/apple/apple-touch-icon-144x144.png"
+		  sizes="144x144"
+		  rel="apple-touch-icon">
+
+	<!-- iOS 7 iPhone (retina) -->
+	<link href="assets/img/apple/apple-touch-icon-120x120.png"
+		  sizes="120x120"
+		  rel="apple-touch-icon">
+
+	<!-- iOS 6 iPhone (retina) -->
+	<link href="assets/img/apple/apple-touch-icon-114x114.png"
+		  sizes="114x114"
+		  rel="apple-touch-icon">
+
+	<!-- iOS 7 iPad -->
+	<link href="assets/img/apple/apple-touch-icon-76x76.png"
+		  sizes="76x76"
+		  rel="apple-touch-icon">
+
+	<!-- iOS 6 iPad -->
+	<link href="assets/img/apple/apple-touch-icon-72x72.png"
+		  sizes="72x72"
+		  rel="apple-touch-icon">
+
+	<!-- iOS 6 iPhone -->
+	<link href="assets/img/apple/apple-touch-icon-57x57.png"
+		  sizes="57x57"
+		  rel="apple-touch-icon">
+
+	<!-- Startup images -->
+
+	<!-- iOS 6 & 7 iPad (retina, portrait) -->
+	<link href="assets/img/apple/apple-touch-startup-image-1536x2008.png"
+		  media="(device-width: 768px) and (device-height: 1024px)
+			 and (orientation: portrait)
+			 and (-webkit-device-pixel-ratio: 2)"
+		  rel="apple-touch-startup-image">
+
+	<!-- iOS 6 & 7 iPad (retina, landscape) -->
+	<link href="assets/img/apple/apple-touch-startup-image-1496x2048.png"
+		  media="(device-width: 768px) and (device-height: 1024px)
+			 and (orientation: landscape)
+			 and (-webkit-device-pixel-ratio: 2)"
+		  rel="apple-touch-startup-image">
+
+	<!-- iOS 6 iPad (portrait) -->
+	<link href="assets/img/apple/apple-touch-startup-image-768x1004.png"
+		  media="(device-width: 768px) and (device-height: 1024px)
+			 and (orientation: portrait)
+			 and (-webkit-device-pixel-ratio: 1)"
+		  rel="apple-touch-startup-image">
+
+	<!-- iOS 6 iPad (landscape) -->
+	<link href="assets/img/apple/apple-touch-startup-image-748x1024.png"
+		  media="(device-width: 768px) and (device-height: 1024px)
+			 and (orientation: landscape)
+			 and (-webkit-device-pixel-ratio: 1)"
+		  rel="apple-touch-startup-image">
+
+	<!-- iOS 6 & 7 iPhone 5 -->
+	<link href="assets/img/apple/apple-touch-startup-image-640x1096.png"
+		  media="(device-width: 320px) and (device-height: 568px)
+			 and (-webkit-device-pixel-ratio: 2)"
+		  rel="apple-touch-startup-image">
+
+	<!-- iOS 6 & 7 iPhone (retina) -->
+	<link href="assets/img/apple/apple-touch-startup-image-640x920.png"
+		  media="(device-width: 320px) and (device-height: 480px)
+			 and (-webkit-device-pixel-ratio: 2)"
+		  rel="apple-touch-startup-image">
+
+	<!-- iOS 6 iPhone -->
+	<link href="assets/img/apple/apple-touch-startup-image-320x460.png"
+		  media="(device-width: 320px) and (device-height: 480px)
+			 and (-webkit-device-pixel-ratio: 1)"
+		  rel="apple-touch-startup-image">
+	<link rel="stylesheet" href="../../code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="assets/css/owl.theme.css">
+	<link rel="stylesheet" href="assets/css/photoswipe.css">
+	<link rel="stylesheet" href="assets/css/addtohomescreen.css">
+	<style>
+		.accent-color, .owl-theme .owl-controls .owl-page span, .ui-btn-active {
+			background: #ff6446!important;
+		}
+		.ui-page-theme-a .ui-btn.ui-btn-active, html .ui-bar-a .ui-btn.ui-btn-active, html .ui-body-a .ui-btn.ui-btn-active, html body .ui-group-theme-a .ui-btn.ui-btn-active, html head+body .ui-btn.ui-btn-a.ui-btn-active, .ui-page-theme-a .ui-checkbox-on:after, html .ui-bar-a .ui-checkbox-on:after, html .ui-body-a .ui-checkbox-on:after, html body .ui-group-theme-a .ui-checkbox-on:after, .ui-btn.ui-checkbox-on.ui-btn-a:after, .ui-page-theme-a .ui-flipswitch-active, html .ui-bar-a .ui-flipswitch-active, html .ui-body-a .ui-flipswitch-active, html body .ui-group-theme-a .ui-flipswitch-active, html body .ui-flipswitch.ui-bar-a.ui-flipswitch-active, .ui-page-theme-a .ui-slider-track .ui-btn-active, html .ui-bar-a .ui-slider-track .ui-btn-active, html .ui-body-a .ui-slider-track .ui-btn-active, html body .ui-group-theme-a .ui-slider-track .ui-btn-active, html body div.ui-slider-track.ui-body-a .ui-btn-active {
+			background-color: #ff6446!important;
+		}
+		.ui-page-theme-a .ui-radio-on:after, html .ui-bar-a .ui-radio-on:after, html .ui-body-a .ui-radio-on:after, html body .ui-group-theme-a .ui-radio-on:after, .ui-btn.ui-radio-on.ui-btn-a:after {
+			border-color: #ff6446;
+		}
+		.svg-accent {
+			fill: #ff6446!important;
+		}
+		.ui-btn-active {
+			box-shadow: inset 0px 0px 3px #ff6446, 0px 0px 9px #ff6446!important;
+			border: none!important;
+		}
+		.ui-focus, .ui-btn:focus { 
+			box-shadow: inset 0px 0px 3px #ff6446, 0px 0px 9px #ff6446!important;
+		}
+	</style>
+	<script defer type="text/javascript" src="assets/js/klass.min.js"></script>
+	<script src="../../code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="../../code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script defer type="text/javascript" src="assets/js/jstorage.js"></script>
+	<script defer type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+	<script defer type="text/javascript" src="assets/js/code.photoswipe.jquery-3.0.5.min.js"></script>
+	<script defer type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
+
+
+ 
+</head>
+<body>
+
+<div data-role="page" id="pageone">
+  <div data-role="panel" id="myPanel"> 
+    <ul data-role="listview" data-inset="false" data-theme="b">
+		<li><div style="text-align: center;"><img src="img/logo.png" alt="Logo"></div></li>
+		<li><a data-transition="slide" href="What_is_Plagiarism.html"><img src="img/menu-icons/home.png" alt="Home" class="ui-li-icon">Home</a></li>
+		<li id="forum" class="countable-"><a data-transition="slide" data-count="0" href="forum.html"><img src="img/menu-icons/blog.png" alt="forum" class="ui-li-icon">Forum</a></li>
+		<li id="menu_video" class="countable-"><a data-transition="slide" data-count="0" href="video.html"><img src="img/menu-icons/video.png" alt="Video" class="ui-li-icon">Video</a></li>
+		<li id="bookmark" class="countable-"><a data-transition="slide" data-count="0" href="bookmark.html"><img src="img/menu-icons/video.png" alt="bookmark" class="ui-li-icon">Bookmark</a></li>
+		<li id="tools" class="countable-"><a data-transition="slide" data-count="0" href="tools.html"><img src="img/menu-icons/video.png" alt="tools" class="ui-li-icon">tools</a></li>
+		<li id="contactus" class="countable-"><a data-transition="slide" data-count="0" href="contact.html"><img src="img/menu-icons/video.png" alt="contact" class="ui-li-icon">Contact Us</a></li>
+	</ul>
+  </div> 
+
+
+  <div data-role="header">
+  <a href="#myPanel"  data-theme="b" class="ui-btn-left">Menu</a>
+    <h1>Plagiarism</h1>
+  </div>
+
+  <div data-role="content"  >    
+
+	<div id="photoContainer">
+</div>
+<div data-role="content">
+		<div class="container">
+			<article class="blog-article">
+				<div class="single-blog-article-meta">
+					<h3 class="single-blog-article-title">What is Plagiarism?</h3>
+					<div class="date"></div>
+				</div>
+<div style="clear: both;" class="blog-featured-image blog-image-center">
+					<div style="display: inline-block; max-width: 100%;">
+						<img src="img/content-images/blog-article-2.jpg" alt="Blog Image 1" width="531" height="246">
+					</div>
+			  </div>
+				<h3>Introduction</h3>
+                <p>Plagiarism has become an increasingly serious problem in the University. It    is aggravated by the easy access to and the ease of cutting and pasting from    a wide range of materials available on the internet. Plagiarism is regarded    as a very serious offence in the academic world. It constitutes academic theft    - the offender has 'stolen' the work of others and presented the stolen work    as if it were his or her own. It goes to the integrity and honesty of a person.    It stifles creativity and originality, and defeats the purpose of education. </p>
+                <p>In this University, plagiarism is a disciplinary offence. Any student who commits    the offence is liable to disciplinary action. It is disappointing to witness    an increase of plagiarism in the University at both undergraduate and graduate    levels in recent years. Time and again students who appeared before the University    Disciplinary Committee alleged that they did not know what constituted plagiarism.    This booklet attempts to give you some guidance on what constitutes plagiarism,    why it is wrong, and how to avoid it.</p>
+             			
+     <div data-role="main" class="ui-content">
+    <div data-role="collapsible">
+      <h1>What constitutes plagiarism?</h1>
+      <p> Plagiarism is defined as the unacknowledged use, as one's own, of work of another person, whether or not such work has been published."
+
+<p>Put it simply, plagiarism is copying the work of another person without proper acknowledgement. There are two parts in the definition: copying and the absence of proper acknowledgement. As a result, it gives an impression to an ordinary reader that the work is the original work of the author when in fact it was copied from some others' work. The idea underlying plagiarism is very simple: if you appropriate the work of another person, you should give proper recognition to that person.</p>
+
+<p>Plagiarism covers "any other form of work submitted for assessment as part of a University examination". It covers theses, dissertations, take-home examinations, assignments, projects, and other forms of coursework. </p>
+    </div>
+  </div>
+       
+       <div data-role="main" class="ui-content">
+    <div data-role="collapsible">
+      <h1>How to avoid plagiarism?</h1>
+      <p> It is not difficult to avoid plagiarism. Some of the examples above have already shown how plagiarism can be avoided. The best approach is of course not to copy at all. Try to summarize, digest and then explain what you have read in your own words. Focus on the difference between different authors on the same topic, and try to evaluate the strengths and weaknesses of their arguments. Avoid doing your research and writing at the last minute. For a good piece of research work, the time for writing up (and re-writing) may be as long as, if not longer, than the time for research. Prepare an outline of your paper, and write from your outline without looking at the source material or even your notes. This will reduce the temptation to copy. If you have to quote from other sources, for example, in order to preserve the impact of the original wording or to illustrate a point, make sure that you identify the quote and provide the source. In any event, the copied passages should not form a substantial portion of your work. Don't forget that proper acknowledgement is still required if you borrow an idea from others, even when you are not directly quoting from the source. </p>
+    </div>
+  </div>
+         
+          <div data-role="main" class="ui-content">
+    <div data-role="collapsible">
+      <h1>The most common form of plagiarism</h1>
+      <p> The most common form of plagiarism is copying from the published works of writers or the essays of other students without any acknowledgement. The source may be published in traditional text or on the internet.</p>     
+    </div>
+  </div>       
+         
+          <div data-role="main" class="ui-content">
+    <div data-role="collapsible">
+      <h1>What is proper acknowledgement?</h1>
+      <p> Plagiarism does not mean that you cannot quote from others' work. After all, academic work has to be built on existing knowledge. You are free to quote the work of others to strengthen your arguments provided that the quote is properly identified and the source is acknowledged. Thus, copying by itself is not plagiarism if the copied passages are identified and properly acknowledged. However, a rider should be added that the purpose of a research paper, project or an examination will be defeated if the work submitted is nothing more than a piece of cut and paste work. The aim of University education is to foster your originality, your independent thinking and analysis, and your power to express and convey your own ideas. A research paper will have little academic value if it does no more than copy passages upon passages from other sources, even when the sources are properly acknowledged. Extensive copying from sources may also suggest that you do not really understand the copied passages. </p>     
+    </div>
+  </div>              
+				<hr style="background: #bebebe; margin: 30px 0;">
+				<div class="disqus-wrap disqus-inactive"></div>
+				<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+				<span class="logo-disqus">Resourse From: HK University</span></a>
+				<hr style="background: #bebebe; margin: 30px 0;">
+			</article>
+		</div>
+ 
+ 
+</div>
+ </body>
+</html>
+
+
